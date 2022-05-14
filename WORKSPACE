@@ -50,11 +50,11 @@ http_archive(
     patches = ["//third_party:arrow.patch"],
 )
 
-ABSL_COMMIT = "e1d388e7e74803050423d035e4374131b9b57919"  # lts_20210324.1
+ABSL_COMMIT = "fbbb5865a562c9a9167d71c1cf56b82025a8f065"  # tags/20210324.2
 http_archive(
     name = "com_google_absl",
     urls = ["https://github.com/abseil/abseil-cpp/archive/%s.zip" % ABSL_COMMIT],
-    sha256 = "baebd1536bec56ae7d7c060c20c01af89ecba2c0b1bc8992b652520655395f94",
+    sha256 = "3eb51dd57a214a948c473d50e04fe869b439f9c58b5e15de98a45dc28077a4a4",
     strip_prefix = "abseil-cpp-%s" % ABSL_COMMIT,
 )
 
@@ -104,23 +104,20 @@ http_archive(
     ],
 )
 
-ZETASQL_COMMIT = "5ccb05880e72ab9ff75dd6b05d7b0acce53f1ea2" # 04/22/2021
+ZETASQL_COMMIT = "1933acefe8eb10e293309a9fa7d7c7f1cb6bf8c4" # 04/20/2022
 http_archive(
     name = "com_google_zetasql",
     urls = ["https://github.com/google/zetasql/archive/%s.zip" % ZETASQL_COMMIT],
     strip_prefix = "zetasql-%s" % ZETASQL_COMMIT,
-    sha256 = '4ca4e45f457926484822701ec15ca4d0172b01d7ce43c0b34c6f3ab98c95b241'
+    sha256 = 'd28075d4ad617c21533d6537cc507802e36ee7e8b66119364eb3dfc3643d6157'
 )
 
 load("@com_google_zetasql//bazel:zetasql_deps_step_1.bzl", "zetasql_deps_step_1")
 zetasql_deps_step_1()
 load("@com_google_zetasql//bazel:zetasql_deps_step_2.bzl", "zetasql_deps_step_2")
-zetasql_deps_step_2(
-    analyzer_deps = True,
-    evaluator_deps = True,
-    tools_deps = False,
-    java_deps = False,
-    testing_deps = False)
+zetasql_deps_step_2()
+load("@com_google_zetasql//bazel:zetasql_deps_step_3.bzl", "zetasql_deps_step_3")
+zetasql_deps_step_3()
 
 # Specify the minimum required bazel version.
 load("@org_tensorflow_no_deps//tensorflow:version_check.bzl", "check_bazel_version_at_least")

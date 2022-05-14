@@ -27,18 +27,18 @@ tfx_bsl_proto_library(
     cc_api_version = 2,
 )
 
-cc_test(
-    name = "kmv_sketch_test",
-    size = "small",
-    srcs = ["kmv_sketch_test.cc"],
-    deps = [
-        ":kmv_sketch",
-        ":sketches_proto",
-        "@com_google_absl//absl/status",
-        "@com_google_absl//absl/strings:str_format",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
+# cc_test(
+#     name = "kmv_sketch_test",
+#     size = "small",
+#     srcs = ["kmv_sketch_test.cc"],
+#     deps = [
+#         ":kmv_sketch",
+#         ":sketches_proto",
+#         "@com_google_absl//absl/status",
+#         "@com_google_absl//absl/strings:str_format",
+#         "@com_google_googletest//:gtest_main",
+#     ],
+# )
 
 cc_library(
     name = "misragries_sketch",
@@ -59,20 +59,20 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "misragries_sketch_test",
-    size = "small",
-    srcs = ["misragries_sketch_test.cc"],
-    deps = [
-        ":misragries_sketch",
-        ":sketches_proto",
-        "//tfx_bsl/cc/util:status_util",
-        "@com_google_absl//absl/status",
-        "@com_google_absl//absl/strings",
-        "@com_google_absl//absl/strings:str_format",
-        "@com_google_googletest//:gtest_main",
-    ],
-)
+# cc_test(
+#     name = "misragries_sketch_test",
+#     size = "small",
+#     srcs = ["misragries_sketch_test.cc"],
+#     deps = [
+#         ":misragries_sketch",
+#         ":sketches_proto",
+#         "//tfx_bsl/cc/util:status_util",
+#         "@com_google_absl//absl/status",
+#         "@com_google_absl//absl/strings",
+#         "@com_google_absl//absl/strings:str_format",
+#         "@com_google_googletest//:gtest_main",
+#     ],
+# )
 
 cc_library(
     name = "sketches_submodule",

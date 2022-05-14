@@ -40,16 +40,16 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "merge_util_test",
-    srcs = ["merge_util_test.cc"],
-    deps = [
-        ":merge_util",
-        "//tfx_bsl/cc/util:status_util",
-        "@com_github_tensorflow_metadata//tensorflow_metadata/proto/v0:cc_metadata_v0_proto_cc",
-        "@com_google_absl//absl/status",
-        "@com_google_absl//absl/status:statusor",
-        "@com_google_googletest//:gtest_main",
-        "@com_google_protobuf//:protobuf",
-    ],
-)
+# cc_test(
+#     name = "merge_util_test",
+#     srcs = ["merge_util_test.cc"],
+#     deps = [
+#         ":merge_util",
+#         "//tfx_bsl/cc/util:status_util",
+#         "@com_github_tensorflow_metadata//tensorflow_metadata/proto/v0:cc_metadata_v0_proto_cc",
+#         "@com_google_absl//absl/status",
+#         "@com_google_absl//absl/status:statusor",
+#         "@com_google_googletest//:gtest_main",
+#         "@com_google_protobuf//:protobuf",
+#     ],
+# )
