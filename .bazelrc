@@ -15,3 +15,5 @@ build --incompatible_restrict_string_escapes=false
 build --incompatible_require_linker_input_cc_api=false
 build:macos --apple_platform_type=macos
 build:macos_arm64 --cpu=darwin_arm64
+
+build --protocopt=--experimental_allow_proto3_optional
